@@ -86,8 +86,17 @@ var finances = [
   ["Jan-2017", 138230],
   ["Feb-2017", 671099],
 ];
+// Loging text in the console
 console.log("Financial Analysis");
 console.log("----------------------------");
+
 // Finding the total number of months included in the dataset
 var totalNumberOfMonth = finances.length;
 console.log("Total Number Of Month: " + totalNumberOfMonth);
+
+// Finding the net total amount of Profit/Losses over the entire period
+var totalProfitLosses = 0;
+for (var i = 0; i < finances.length; i++) {
+  totalProfitLosses = totalProfitLosses + finances[i][1];
+}
+console.log("Total of Profit/Losses: $" + totalProfitLosses);
