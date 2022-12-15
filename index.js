@@ -111,11 +111,15 @@ console.log("Average Change in Profit/Losses: $" + averageChanges);
 // making new array containin numbers only
 var numberArray = [];
 for (var i = 0; i < finances.length; i++) {
-  if (finances[i][1] >= 0 || finances[i][1] <= 0) {
-    numberArray.push(finances[i][1]);
-  }
+  numberArray.push(finances[i][1]);
 }
+console.log(numberArray);
+// for (var i = 0; i < finances.length; i++) {
+//   if (finances[i][1] >= 0 || finances[i][1] <= 0) {
+//     numberArray.push(finances[i][1]);
+//   }
+// }
+
+// finding biggest smollest number ir new array
 var greatestIncrease = Math.max(...numberArray);
-console.log(greatestIncrease);
 var greatestDecrease = Math.min(...numberArray);
-console.log(greatestDecrease);
