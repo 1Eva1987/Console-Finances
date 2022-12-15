@@ -122,7 +122,7 @@ for (var i = 0; i < finances.length; i++) {
   }
 }
 console.log(
-  "Greatest Increase in profit: " +
+  "Greatest Increase in profits: " +
     dateIncrease[0] +
     " ($" +
     greatestIncreaseProfits +
@@ -137,7 +137,19 @@ for (var i = 0; i < finances.length; i++) {
     negNum.push(numberArray[i]);
   }
 }
-console.log(negNum);
 // finding smallest negative number in negNum array
 var greatestDecreaseLosses = Math.max(...negNum);
-console.log(greatestDecreaseLosses);
+// // finding month corresponding to the ammount
+var dateDecrease;
+for (var i = 0; i < finances.length; i++) {
+  if (finances[i][1] === greatestDecreaseLosses) {
+    dateDecrease = finances[i];
+  }
+}
+console.log(
+  "Greatest Decrease in Losses: " +
+    dateDecrease[0] +
+    " ($" +
+    greatestDecreaseLosses +
+    ")"
+);
