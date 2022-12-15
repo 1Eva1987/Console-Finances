@@ -114,9 +114,8 @@ for (var i = 0; i < finances.length; i++) {
   numberArray.push(finances[i][1]);
 }
 
-// finding biggest smollest number ir new array
+// finding the biggest  number ir new array correspondin the bigest increase in profit
 var greatestIncrease = Math.max(...numberArray);
-var greatestDecrease = Math.min(...numberArray);
 
 // Finding month corresponding to the ammount
 var dateIncrease;
@@ -125,9 +124,17 @@ for (var i = 0; i < finances.length; i++) {
     dateIncrease = finances[i];
   }
 }
-var dateDecrease;
-for (var i = 0; i < finances.length; i++) {
-  if (finances[i][1] === greatestDecrease) {
-    dateDecrease = finances[i];
-  }
-}
+console.log(
+  "Greatest Increase in profit: " +
+    dateIncrease[0] +
+    " ($" +
+    greatestIncrease +
+    ")"
+);
+
+// var dateDecrease;
+// for (var i = 0; i < finances.length; i++) {
+//   if (finances[i][1] === greatestDecrease) {
+//     dateDecrease = finances[i];
+//   }
+// }
