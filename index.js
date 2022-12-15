@@ -105,3 +105,17 @@ console.log("Total of Profit/Losses: $" + totalProfitLosses);
 var averageChanges = totalProfitLosses / finances.length;
 averageChanges = averageChanges.toFixed(2);
 console.log("Average Change in Profit/Losses: $" + averageChanges);
+
+// Finding The greatest increase in profits
+
+// making new array containin numbers only
+var numberArray = [];
+for (var i = 0; i < finances.length; i++) {
+  if (finances[i][1] >= 0 || finances[i][1] <= 0) {
+    numberArray.push(finances[i][1]);
+  }
+}
+var greatestIncrease = Math.max(...numberArray);
+console.log(greatestIncrease);
+var greatestDecrease = Math.min(...numberArray);
+console.log(greatestDecrease);
