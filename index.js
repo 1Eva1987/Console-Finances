@@ -113,13 +113,21 @@ var numberArray = [];
 for (var i = 0; i < finances.length; i++) {
   numberArray.push(finances[i][1]);
 }
-console.log(numberArray);
-// for (var i = 0; i < finances.length; i++) {
-//   if (finances[i][1] >= 0 || finances[i][1] <= 0) {
-//     numberArray.push(finances[i][1]);
-//   }
-// }
 
 // finding biggest smollest number ir new array
 var greatestIncrease = Math.max(...numberArray);
 var greatestDecrease = Math.min(...numberArray);
+
+// Finding month corresponding to the ammount
+var dateIncrease;
+for (var i = 0; i < finances.length; i++) {
+  if (finances[i][1] === greatestIncrease) {
+    dateIncrease = finances[i];
+  }
+}
+var dateDecrease;
+for (var i = 0; i < finances.length; i++) {
+  if (finances[i][1] === greatestDecrease) {
+    dateDecrease = finances[i];
+  }
+}
