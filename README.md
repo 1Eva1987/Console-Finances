@@ -8,7 +8,7 @@ This repository was created to write Java Script code for analyzing the financia
 
 To see the output of the solution go to deployed website and open console in dev tools.
 
-![image of deployed Console-Finances webpage](./images/Screenshot%202022-12-15%20at%2016.39.26.png)
+![image of deployed Console-Finances webpage](./images/Screenshot%202022-12-21%20at%2010.23.45.png)
 
 ## Link
 
