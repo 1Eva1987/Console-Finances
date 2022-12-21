@@ -101,10 +101,27 @@ for (var i = 0; i < finances.length; i++) {
 }
 console.log("Total of Profit/Losses: $" + totalProfitLosses);
 
-// Finding the average of the changes in Profit/Losses over the entire period
-var averageChanges = totalProfitLosses / finances.length;
-averageChanges = averageChanges.toFixed(2);
-console.log("Average Change in Profit/Losses: $" + averageChanges);
+// Finding the The average of the changes in Profit/Losses over the entire period.
+// Creatin array to hold all changes of proffit/losses from the begining (from month to month)
+var changesArray = [finances[0][1]];
+for (var i = 1; i < finances.length; i++) {
+  var changes = finances[i][1] - finances[i - 1][1];
+  changesArray.push(changes);
+}
+// Finding total of changes
+var totalChanges = 0;
+for (var i = 0; i < changesArray.length; i++) {
+  totalChanges = totalChanges + changesArray[i];
+}
+// Finaly finding the average of changes (total of changes / total of month)
+var averageOfChanges = (totalChanges / finances.length).toFixed(2);
+console.log("Average Change in Profit/Losses: $ " + averageOfChanges);
+
+// var averageChanges = totalProfitLosses / finances.length;
+// averageChanges = averageChanges.toFixed(2);
+// console.log("Average Change in Profit/Losses: $" + averageChanges);
+
+// trying to get average of changes in every month
 
 // Finding The greatest increase in profits
 // making new array holding only numbers from finances array
@@ -112,6 +129,7 @@ var numberArray = [];
 for (var i = 0; i < finances.length; i++) {
   numberArray.push(finances[i][1]);
 }
+
 // finding the biggest  number ir new array correspondin the bigest increase in profit
 var greatestIncreaseProfits = Math.max(...numberArray);
 // finding month corresponding to the ammount
