@@ -117,12 +117,6 @@ for (var i = 0; i < changesArray.length; i++) {
 var averageOfChanges = (totalChanges / finances.length).toFixed(2);
 console.log("Average Change in Profit/Losses: $ " + averageOfChanges);
 
-// var averageChanges = totalProfitLosses / finances.length;
-// averageChanges = averageChanges.toFixed(2);
-// console.log("Average Change in Profit/Losses: $" + averageChanges);
-
-// trying to get average of changes in every month
-
 // Finding The greatest increase in profits
 // making new array holding only numbers from finances array
 var numberArray = [];
