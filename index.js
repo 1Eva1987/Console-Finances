@@ -103,6 +103,7 @@ console.log("Total of Profit/Losses: $" + totalProfitLosses);
 
 // Finding the The average of the changes in Profit/Losses over the entire period.
 // Creatin array to hold all changes of proffit/losses from the begining (from month to month)
+
 var changesArray = [finances[0][1]];
 for (var i = 1; i < finances.length; i++) {
   var changes = finances[i][1] - finances[i - 1][1];
@@ -117,51 +118,37 @@ for (var i = 0; i < changesArray.length; i++) {
 var averageOfChanges = (totalChanges / finances.length).toFixed(2);
 console.log("Average Change in Profit/Losses: $ " + averageOfChanges);
 
-// Finding The greatest increase in profits
-// making new array holding only numbers from finances array
-var numberArray = [];
-for (var i = 0; i < finances.length; i++) {
-  numberArray.push(finances[i][1]);
-}
-
-// finding the biggest  number ir new array correspondin the bigest increase in profit
-var greatestIncreaseProfits = Math.max(...numberArray);
-// finding month corresponding to the ammount
-var dateIncrease;
-for (var i = 0; i < finances.length; i++) {
-  if (finances[i][1] === greatestIncreaseProfits) {
-    dateIncrease = finances[i];
+// Finding greatest increase in profits
+var bigestIncrease = Math.max(...changesArray);
+for (i = 0; i < changesArray.length; i++) {
+  if (bigestIncrease === changesArray[i]) {
+    var index = i;
   }
 }
+// finding the date when the greatest profit was recieved tracking changes
+var neededDateOfIncrease = finances[index];
+var dateOfIncrease = neededDateOfIncrease[0];
 console.log(
   "Greatest Increase in profits: " +
-    dateIncrease[0] +
+    dateOfIncrease +
     " ($" +
-    greatestIncreaseProfits +
+    bigestIncrease +
     ")"
 );
-
-// Finding the greatest decrease in losses
-// making new array holding only negative numbers from numberArray
-var negNum = [];
-for (var i = 0; i < finances.length; i++) {
-  if (numberArray[i] < 0) {
-    negNum.push(numberArray[i]);
+// Finding the greatest decrease
+var greatestDecrease = Math.min(...changesArray);
+for (let i = 0; i < changesArray.length; i++) {
+  if (greatestDecrease === changesArray[i]) {
+    var indexDecrease = i;
   }
 }
-// finding smallest negative number in negNum array
-var greatestDecreaseLosses = Math.max(...negNum);
-// // finding month corresponding to the ammount
-var dateDecrease;
-for (var i = 0; i < finances.length; i++) {
-  if (finances[i][1] === greatestDecreaseLosses) {
-    dateDecrease = finances[i];
-  }
-}
+// finding date of greates decrease
+var neededDateOfDecrease = finances[indexDecrease];
+var dateOfDecrease = neededDateOfDecrease[0];
 console.log(
-  "Greatest Decrease in Losses: " +
-    dateDecrease[0] +
+  "Greatest Decrease in profit: " +
+    dateOfDecrease +
     " ($" +
-    greatestDecreaseLosses +
+    greatestDecrease +
     ")"
 );
