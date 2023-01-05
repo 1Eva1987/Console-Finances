@@ -120,12 +120,12 @@ console.log("Average Change in Profit/Losses: $ " + averageOfChanges);
 
 // Finding greatest increase in profits
 var bigestIncrease = Math.max(...changesArray);
+// finding the date when the greatest profit was recieved tracking changes
 for (i = 0; i < changesArray.length; i++) {
   if (bigestIncrease === changesArray[i]) {
     var index = i;
   }
 }
-// finding the date when the greatest profit was recieved tracking changes
 var neededDateOfIncrease = finances[index];
 var dateOfIncrease = neededDateOfIncrease[0];
 console.log(
@@ -137,12 +137,12 @@ console.log(
 );
 // Finding the greatest decrease
 var greatestDecrease = Math.min(...changesArray);
+// finding date of greates decrease
 for (let i = 0; i < changesArray.length; i++) {
   if (greatestDecrease === changesArray[i]) {
     var indexDecrease = i;
   }
 }
-// finding date of greates decrease
 var neededDateOfDecrease = finances[indexDecrease];
 var dateOfDecrease = neededDateOfDecrease[0];
 console.log(
